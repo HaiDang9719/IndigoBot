@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-navbar color="abc">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      History
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page3" class="backgroundColorPage">
+  <ion-item-group *ngFor="let item of paidItemList">
+    <ion-item-divider color="calm" style="color:rebeccapurple" >
+        Timestamp: {{ item.dateTime| date: 'EEEE, MMMM d, y, hh:mm:ss a'}}</ion-item-divider>
+    <ion-grid>
+      <ion-row *ngFor="let item1 of item.menu_items" >
+        <ion-col col-6 >
+          <ion-item style="background-color:seashell">{{item1.name}}</ion-item>
+        </ion-col>
+        <ion-col col-2>
+          <ion-item style="background-color:seashell">x{{item1.quantity}}</ion-item>
+        </ion-col>
+        <ion-col col-4>
+          <ion-item style="background-color:seashell">{{item1.totalPrice | currency:'VND':true:'1.0-0'}}</ion-item>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-item-group>
+</ion-content>

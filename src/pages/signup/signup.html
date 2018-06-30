@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Signup
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5">  
+    <ion-list>
+      <ion-item>
+        <ion-label>
+          Full Name
+        </ion-label>
+        <ion-input type="text" placeholder="" [(ngModel)]="account.displayName"></ion-input>
+      </ion-item>
+      <ion-item>
+          <ion-label>
+            PhoneNo
+          </ion-label>
+          <ion-input type="text" placeholder="" [(ngModel)]="account.phoneNo"></ion-input>
+        </ion-item>            
+      <ion-item>
+        <ion-label>
+          Email
+        </ion-label>
+        <ion-input type="email" placeholder="" [(ngModel)]="account.email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Password
+        </ion-label>
+        <ion-input type="text" placeholder="" [(ngModel)]="account.password"></ion-input>
+      </ion-item>
+    </ion-list>
+    <button 
+      *ngIf="userAccount == undefined"
+      id="signup-button4" ion-button color="stable" block (click)="registerAccount()">
+      Sign up
+    </button>  
+    <button 
+      *ngIf="userAccount != undefined"
+      id="signup-button4" ion-button color="stable" block (click)="updateAccountInfo()">
+      Update Info
+    </button>  
+    
+</ion-content>

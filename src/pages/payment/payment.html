@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-navbar color="abc">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Payment
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page8" class="backgroundColorPage">
+    <ion-list >
+        <ion-item *ngFor="let item of orderList" class="backgroundColorCard">
+          <ion-thumbnail item-start>
+            <img src="{{ item.imageUrl }}"/>
+          </ion-thumbnail>
+          <h2 style="color:rebeccapurple;font-weight:bold">{{item.name}}</h2>
+          <div class="row">
+              <div class="col col-50" ><p>Small Size</p></div>
+              <div class="col col-30"><p> x{{item.quantity}}</p></div>
+              <div class="col col-20"><p>{{item.totalPriceForEachItem | currency:'VND':true:'1.0-0'}} </p></div>
+            </div>
+            <div class="row" >
+                <div class="col col-50"><p class="backgroundColorCard">Price: {{item.price | currency:'VND':true:'1.0-0'}} </p></div>
+              </div>
+        </ion-item>
+        <ion-item>
+          <ion-label>
+            Total price: 
+          </ion-label>
+          <ion-input type="text" placeholder="" [disabled] = "true" value = "{{totalPrice| currency:'VND':true:'1.0-0'}} " ></ion-input>
+        </ion-item>
+      </ion-list>
+      <ion-list radio-group [(ngModel)]="paymentMethod">
+          <ion-list-header>
+            Payment Method
+          </ion-list-header>
+        
+          <ion-item>
+            <ion-label>Cash</ion-label>
+            <ion-radio (click)="getPaymentMethod()" value="CASH"></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Debit/Credit Card</ion-label>
+            <ion-radio (click)="getPaymentMethod()" value="CARD"></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label>Crypto</ion-label>
+            <ion-radio (click)="getPaymentMethod()" value="CRYPTO" ></ion-radio>
+          </ion-item>
+        </ion-list>
+</ion-content>
+<ion-footer>
+  <ion-toolbar style="padding : 10px">
+    <button ion-button color="primary" full (click)="ProcessPayment()" style="color:white; background-color:rebeccapurple ">Process to Checkout</button>
+  </ion-toolbar>
+</ion-footer>

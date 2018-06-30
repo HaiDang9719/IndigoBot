@@ -1,0 +1,21 @@
+<ion-header >
+  <ion-navbar color="abc">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Menu 
+    </ion-title>
+    <ion-buttons right>
+        <button ion-button icon-only><img style="width: 40px; height: 40px" src="assets/img/logo.png"></button>
+      </ion-buttons>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <menu-tabs></menu-tabs>
+</ion-content>
+<ion-footer>
+  <ion-toolbar style="padding: 10px">
+    <button ion-button full (click)="goToBasket()" style="color:white; background-color:rebeccapurple ">View Basket</button>
+  </ion-toolbar>
+</ion-footer>

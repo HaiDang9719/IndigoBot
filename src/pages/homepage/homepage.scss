@@ -1,0 +1,17 @@
+page-homepage {
+    .item {
+        border-color:4px orange
+    }
+    .ion-card {
+        border-top: 3px solid; 
+        border-left: 3px solid; 
+        border-bottom: 3px solid; 
+        border-right: 3px solid ;
+     }
+     .item-avatar  {     
+        width:160% !important;  
+        height : 150px !important;  
+        max-width: 400px !important;  //any size
+        max-height: 400px !important; //any size 
+        }
+}

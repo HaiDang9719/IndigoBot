@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar color="abc">
+    <ion-title>
+      Basket
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding id="page7">
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of orderItems">
+      <ion-item color="none" id="basket-list-item11"  *ngIf="item['quantity'] > 0">
+        <ion-thumbnail item-start>
+          <img src="{{ item.imageUrl }}"/>
+        </ion-thumbnail>
+        <h2>{{item.name}}</h2>
+        <div class="row">
+            <div class="col col-50"><p>Small Size</p></div>
+            <div class="col col-30"><p> x{{item.quantity}}</p></div>
+            <div class="col col-20"><p>{{item.totalPrice | currency:'VND':true:'1.0-0'}} </p></div>
+          </div>
+          <div class="row">
+              <div class="col col-50"><p>Price: {{item.price | currency:'VND':true:'1.0-0'}} </p></div>
+            </div>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="assertive" (click)="deleteOrderItem(item)">
+          Delete
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+    <ion-item>
+      <ion-label>
+        Total price: 
+      </ion-label>
+      <ion-input type="text" placeholder="" [disabled] = "true" value = "{{totalBill| currency:'VND':true:'1.0-0'}} " ></ion-input>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer> 
+  <ion-toolbar style="padding: 10px">
+    <button ion-button full (click)="pushOrder()">Order</button>
+  </ion-toolbar>
+</ion-footer>

@@ -1,0 +1,31 @@
+<ion-menu [content]="mainContent">
+  <ion-header>
+    <ion-navbar color="menusub1">
+      <ion-title >
+        Hello {{Username}}  
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  <ion-content id="side-menu21" style="background-color:#2c1656">
+    <ion-list id="menu2-list1" >
+      <ion-item color="abc" menuClose="" on-click="goToHomepage()" id="menu2-list-item1">
+        Homepage
+      </ion-item>
+      <ion-item color="abc" menuClose="" on-click="goToMenu()" id="menu2-list-item2">
+        Menu
+      </ion-item>
+      <ion-item color="abc" menuClose="" on-click="goToHistory()" id="menu2-list-item3">
+        History
+      </ion-item>
+      <ion-item color="abc" menuClose="" on-click="goToPayment()"  id="menu2-list-item4">
+        Payment
+      </ion-item>
+      <ion-item color="abc" menuClose="" (click)="logout()" >
+        Logout
+      </ion-item>
+
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav #mainContent [root]="rootPage"></ion-nav>

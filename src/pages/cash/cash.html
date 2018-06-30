@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar color="abc">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      Cash
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page9">
+  <form id="cash-form">
+    <ion-list >
+      <ion-item >
+        <ion-label>
+          Total: 
+        </ion-label>
+        <ion-input type="text" placeholder="" [disabled] = "true" value = "{{totalPrice | currency:'VND':true:'1.0-0'}}" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>
+          Add amount:
+        </ion-label>
+        <ion-input type="number" placeholder="" name="Amount" [(ngModel)]="Amount"></ion-input>
+      </ion-item>
+    </ion-list>
+    <div class="spacer" style="height:40px;" id="login-spacer1"></div>
+    <button ion-button color="stable" (click) = "Pay()" full style="color:white; background-color:rebeccapurple">
+     Request Pay
+    </button>
+    </form>
+</ion-content>
